@@ -1,27 +1,29 @@
-require["dotenv"].config();
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
 const app = express();
 
-//middleware to handle cors
-app.use[
+// CORS middleware
+app.use(
   cors({
-    origin: ["GET", "POST", "PUT", "DELETE"],
+    origin: "*", // or specific origin like "http://localhost:3000"
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
-];
+);
 
-//middleware
-app.use[express.json()];
+// Connect to DB (make sure connectDB is defined)
+const connectDB = require("./config/db"); // Adjust path accordingly
+connectDB();
 
-//Routes
+// Body parser middleware
+app.use(express.json());
 
-//Serve uploads folder
-app.use("/uploads", express.static[(path.join(__dirname, "uploads"), {})]);
+// Serve uploads folder statically
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-//start server
+// Start server
 const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
