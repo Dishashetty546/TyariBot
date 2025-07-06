@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const questionSchema = new mongoose.Schema(
+const QuestionSchema = new mongoose.Schema(
   {
     session: { type: mongoose.Schema.Types.ObjectId, ref: "Session" },
     question: String,
@@ -12,5 +12,4 @@ const questionSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
-module.exports = mongoose.model("Question", questionSchema);
+module.exports = mongoose.model("Question", QuestionSchema);

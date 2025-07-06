@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   createSession,
-  getSessionId,
+  getMySessionsById,
   getMySessions,
   deleteSessions,
 } = require("../controllers/sessionController");
@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post("/create", protect, createSession);
 router.get("/my-sessions", protect, getMySessions);
-router.get("/:id", protect, getSessionId);
+router.get("/:id", protect, getMySessionsById);
 router.delete("/:id", protect, deleteSessions);
 
 module.exports = router;

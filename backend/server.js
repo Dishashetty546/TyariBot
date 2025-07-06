@@ -8,7 +8,7 @@ const app = express();
 // Import routes
 const authRoutes = require("./routes/authRoutes");
 const sessionRoutes = require("./routes/sessionRoutes");
-const sessionRoutes = require("./routes/sessionRoutes");
+
 const questionRoutes = require("./routes/questionRoutes");
 
 // Import AI middleware/controllers
