@@ -5,23 +5,52 @@ const path = require("path");
 
 const app = express();
 
-// CORS middleware
+// Import routes
+const authRoutes = require("./routes/authRoutes");
+const sessionRoutes = require("./routes/sessionRoutes");
+const sessionRoutes = require("./routes/sessionRoutes");
+const questionRoutes = require("./routes/questionRoutes");
+
+// Import AI middleware/controllers
+const {
+  isJSDocProtectedTag,
+  generateInterviewQuestions,
+  generateConceptExplanation,
+} = require("./controllers/aiController");
+
+// Connect to database
+const connectDB = require("./config/db");
+connectDB();
+
+// Middleware
+app.use(express.json());
 app.use(
   cors({
-    origin: "*", // or specific origin like "http://localhost:3000"
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// Connect to DB (make sure connectDB is defined)
-const connectDB = require("./config/db"); // Adjust path accordingly
-connectDB();
+// API routes
+app.use("/api/auth", authRoutes);
+app.use("/api/sessions", sessionRoutes);
+// app.use("/api/questions", questionRoutes);
 
-// Body parser middleware
-app.use(express.json());
+// AI endpoints (correctly use app.get for handler functions)
+app.get(
+  "/api/ai/generate-questions",
+  isJSDocProtectedTag,
+  generateInterviewQuestions
+);
 
-// Serve uploads folder statically
+app.get(
+  "/api/ai/generate-explanation",
+  isJSDocProtectedTag,
+  generateConceptExplanation
+);
+
+// Serve static files (e.g., uploaded images)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Start server
