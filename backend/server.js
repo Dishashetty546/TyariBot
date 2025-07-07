@@ -4,6 +4,8 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
+// Add this at the top of server.js
+const { protect } = require("./middleware/authMiddleware");
 
 // Import routes
 const authRoutes = require("./routes/authRoutes");
@@ -13,7 +15,6 @@ const questionRoutes = require("./routes/questionRoutes");
 
 // Import AI middleware/controllers
 const {
-  isJSDocProtectedTag,
   generateInterviewQuestions,
   generateConceptExplanation,
 } = require("./controllers/aiController");
@@ -35,21 +36,10 @@ app.use(
 // API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
-// app.use("/api/questions", questionRoutes);
+app.use("/api/questions", questionRoutes);
 
-// AI endpoints (correctly use app.get for handler functions)
-app.get(
-  "/api/ai/generate-questions",
-  isJSDocProtectedTag,
-  generateInterviewQuestions
-);
-
-app.get(
-  "/api/ai/generate-explanation",
-  isJSDocProtectedTag,
-  generateConceptExplanation
-);
-
+app.use("/api/ai/generate-questions", protect, generateInterviewQuestions);
+app.use("/api/ai/generate-explanation", protect, generateConceptExplanation);
 // Serve static files (e.g., uploaded images)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
