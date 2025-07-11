@@ -30,3 +30,17 @@ export const APP_FEATURES = [
       "Get tailored suggestions, learning resources, and next steps based on your performance and goals.",
   },
 ];
+export function CARD_BG() {
+  return [
+    { id: 1, bgcolor: "#FFCDD2" },
+    { id: 2, bgcolor: "#F8BBD0" },
+    { id: 3, bgcolor: "#E1BEE7" },
+    { id: 4, bgcolor: "#D1C4E9" },
+    { id: 5, bgcolor: "#C5CAE9" },
+    { id: 6, bgcolor: "#BBDEFB" },
+    { id: 7, bgcolor: "#B2EBF2" },
+    { id: 8, bgcolor: "#C8E6C9" },
+    { id: 9, bgcolor: "#DCEDC8" },
+    { id: 10, bgcolor: "#FFF9C4" },
+  ];
+}

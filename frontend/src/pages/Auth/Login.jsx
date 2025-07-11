@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../../utils/axiosInstance';
+import { apiPath } from '../../utils/apiPath';
+import { UserContext } from '../../context/userContext'; 
 
 const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const { updateUser } = useContext(UserContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    // Basic frontend validation
     if (!email || !password) {
       setError('Please fill in all fields.');
       setLoading(false);
@@ -19,17 +25,21 @@ const Login = ({ setCurrentPage }) => {
     }
 
     try {
-      // Simulated delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await axiosInstance.post(apiPath.login, {
+        email,
+        password
+      });
 
-      // Dummy authentication logic (replace with real API/Firebase logic)
-      if (email === 'test@example.com' && password === 'password123') {
-        alert('Login successful!');
-      } else {
-        setError('Invalid email or password.');
+      const { token } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        updateUser(response.data);
+        navigate("/dashboard");
       }
+
     } catch (err) {
-      setError('Something went wrong. Please try again later.');
+      setError(err.response?.data?.message || 'Something went wrong. Please try again later.');
     }
 
     setLoading(false);

@@ -7,9 +7,11 @@ import LandingPage from './pages/LandingPage'
 import InterviewPrep from './pages/InterviewPrep/InterviewPrep'
 import Dashboard from './pages/Home/Dashboard'
 import SignUp from './pages/Auth/SignUp'
+import UserProvider from './context/userContext';
 
 const App = () => {
   return (
+    <UserProvider>
     <div>
       <Router>
         <Routes>
@@ -30,6 +32,7 @@ const App = () => {
       }}
       />
     </div>
+    </UserProvider>
   )
 }
 

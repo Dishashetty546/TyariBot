@@ -1,25 +1,26 @@
 // apiPath.js
 
-const apiPath = {
+export const BASE_URL = "http://localhost:7000";
+
+export const apiPath = {
   // AUTHENTICATION
-  register: "/api/auth/register",
-  login: "/api/auth/login",
-  getAllProfiles: "/api/auth/profile",
-  uploadImage: "/api/auth/update-image",
+  register: `${BASE_URL}/api/auth/register`,
+  login: `${BASE_URL}/api/auth/login`,
+  getAllProfiles: `${BASE_URL}/api/auth/profile`,
+  uploadImage: `${BASE_URL}/api/auth/update-image`,
 
   // SESSIONS
-  createSession: "/api/sessions/create",
-  getMySessions: "/api/sessions/my-sessions",
-  getSessionById: (sessionId) => `/api/sessions/${sessionId}`,
+  createSession: `${BASE_URL}/api/sessions/create`,
+  getMySessions: `${BASE_URL}/api/sessions/my-sessions`,
+  getSessionById: (sessionId) => `${BASE_URL}/api/sessions/${sessionId}`,
 
   // QUESTIONS
-  addQuestions: "/api/questions/add",
-  pinQuestion: (questionId) => `/api/questions/${questionId}/pin`,
-  addNoteToQuestion: (questionId) => `/api/questions/${questionId}/note`,
+  addQuestions: `${BASE_URL}/api/questions/add`,
+  pinQuestion: (questionId) => `${BASE_URL}/api/questions/${questionId}/pin`,
+  addNoteToQuestion: (questionId) =>
+    `${BASE_URL}/api/questions/${questionId}/note`,
 
   // AI
-  generateQuestions: "/api/ai/generate-questions",
-  generateExplanation: "/api/ai/generate-explanation",
+  generateQuestions: `${BASE_URL}/api/ai/generate-questions`,
+  generateExplanation: `${BASE_URL}/api/ai/generate-explanation`,
 };
-
-module.exports = apiPath;
