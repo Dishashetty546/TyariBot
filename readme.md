@@ -130,6 +130,6 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 - Smooth and responsive user experience from start to end
 
 \🖼️ _Screenshot Placeholder:_  
-![Secure Register Page](./ScreenShots/s.PNG)
+![Secure Register Page](./ScreenShots/s.png)
 
 ---
