@@ -133,3 +133,21 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 ![Secure Register Page](./ScreenShots/s.png)
 
 ---
+
+### 7️⃣ Deployment & Hosting
+
+📍 **Deployment Setup:**
+
+- 🚀 **Frontend:** Deployed on [Vercel](https://tyari-bot.vercel.app)
+- 🛠️ **Backend:** Deployed on [Render](https://tyaribot.onrender.com)
+- 💾 **Database:** Hosted on MongoDB Atlas
+
+📦 **Environment Management:**
+
+- All sensitive data (API keys, DB URIs, JWT secrets) managed securely using `.env` files
+- `.env` variables are **not committed to version control** and safely configured on Vercel and Render dashboards
+- CORS setup allows seamless communication between frontend and backend
+
+![Secure Register Page](./ScreenShots/render.PNG)
+
+![Secure Register Page](./ScreenShots/vercel.PNG)
