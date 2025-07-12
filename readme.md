@@ -157,3 +157,10 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 git clone https://github.com/Dishashetty546/TyariBot.git
 cd TyariBot
 ```
+
+### 🙌 Acknowledgements
+
+- Google Gemini API – for AI-powered question generation
+- MongoDB Atlas – for cloud database
+- Render & Vercel – for deployment
+- Open-source libraries
