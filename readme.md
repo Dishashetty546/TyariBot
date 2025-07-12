@@ -63,31 +63,18 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 ---
 
-### 1️⃣ Landing Page – First Impression
+### 2️⃣ User Authentication (JWT Secured)
 
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
+📍 **Routes:** `/login`, `/register`  
+🛠️ **Tech Used:** React + Express + MongoDB + JWT
 
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
+- Register with name, email, password
+- Login returns a JWT token
+- Token stored in `localStorage`
+- Protected routes are secured using middleware
 
-🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
-
----
-
-### 1️⃣ Landing Page – First Impression
-
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
-
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
-
-🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
+\🖼️ _Screenshot Placeholder:_  
+![Secure Register Page](./ScreenShots/r.png)
 
 ---
 
