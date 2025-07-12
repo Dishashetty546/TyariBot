@@ -37,17 +37,18 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 | Layer          | Tech Stack                     |
 | -------------- | ------------------------------ |
-| Frontend       | React, Vite, Tailwind CSS      |
+| Frontend       | React, Tailwind CSS            |
 | Backend        | Node.js, Express.js            |
 | AI Integration | Google Gemini Generative AI    |
 | Authentication | JWT, bcryptjs                  |
 | Database       | MongoDB Atlas                  |
 | Deployment     | Vercel (FE), Render (BE)       |
+| Testing API    | Postman                        |
 | Utilities      | Multer (images), dotenv, axios |
 
 ---
 
-## 🧭 Complete Workflow – From Landing Page to AI Output
+## 🧭 Complete Workflow – From Landing Page to Deployment
 
 ### 1️⃣ Landing Page – First Impression
 
@@ -150,4 +151,9 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 ![Secure Register Page](./ScreenShots/render.PNG)
 
-![Secure Register Page](./ScreenShots/vercel.PNG)
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/Dishashetty546/TyariBot.git
+cd TyariBot
+```
