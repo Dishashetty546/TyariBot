@@ -105,30 +105,31 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 ---
 
-### 1️⃣ Landing Page – First Impression
+### 5️⃣ View Answers + Learn More
 
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
+📍 **API:** `/api/ai/generate-explanation`  
+🛠️ **Tech Used:** Gemini API + Markdown Rendering
 
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
+- Click on any question to view a short AI-generated answer
+- Option to “Learn More” for detailed explanation with code
+- Code shown in dark-themed blocks for better readability
 
-🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
+\🖼️ _Screenshot Placeholder:_  
+![Secure Register Page](./ScreenShots/e.PNG)
 
 ---
 
-### 1️⃣ Landing Page – First Impression
+### 6️⃣ Session Management + Smooth UX
 
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
+📍 **Page:** `/my-sessions`  
+🛠️ **Tech Used:** React + REST API + JWT Auth + Tailwind CSS
 
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
+- View all past sessions in a clean dashboard
+- Pin key questions and add personal notes
+- Collapsible question/answer views for better navigation
+- Smooth and responsive user experience from start to end
 
-🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
+\🖼️ _Screenshot Placeholder:_  
+![Secure Register Page](./ScreenShots/s.PNG)
 
 ---
