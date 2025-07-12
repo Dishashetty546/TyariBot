@@ -1,143 +1,173 @@
-checkpoints API
+# 🤖 TyariBot – AI-Powered Mock Interview Platform
 
-AUTHENTICATION
+A full-stack intelligent mock interview simulator that helps users prepare for real-world technical interviews. Built using the MERN stack, JWT auth, and Gemini AI integration, TyariBot generates personalized interview questions and detailed explanations with code — just like a real interviewer would.
 
-1. REGISTER - post
-   http://localhost:7000/api/auth/register
-   {
-   "\_id": "6869e9224a16bb233d7b8fbf",
-   "name": "Your Name",
-   "email": "your@email.com",
-   "profileImageUrl": "https://example.com/image.jpg",
-   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjllOTIyNGExNmJiMjMzZDdiOGZiZiIsImlhdCI6MTc1MTc3MTQyNiwiZXhwIjoxNzUxODU3ODI2fQ.fMD2xNIPaIXCID81NVu3sY9qapWTQJI17DkYV-4hOHI"
-   }
+---
 
-2. LOGIN - post
-   http://localhost:7000/api/auth/login
-   {
-   "email": "test@example.com",
-   "password": "testpassword"
-   }
+## 🌐 Live Demo
 
-3. getAllProfiles - get
-   http://localhost:7000/api/auth/profile
+🔗 **Frontend**: [https://tyari-bot.vercel.app](https://tyari-bot.vercel.app)  
+⚙️ **Backend**: [https://tyaribot.onrender.com](https://tyaribot.onrender.com)
 
-4. Image upload - Post
-   http://localhost:7000/api/auth/update-image
-   follow these steps:
-   Go to the Body tab.
-   Select form-data.
-   Add a key named image.
-   Change the type from Text to File (use the dropdown on the left).
-   Choose an image file from your computer.
+---
 
-SESSIONS 5. Session - Post
+## ✨ Features
 
-Login/register and collect token
-On header - key - Authorization, value - Bearer TokenPaste
+- Secure user authentication using JWT
+- Personalized session setup (Role, Experience, Topics)
+- AI-powered question generation using Gemini API
+- Detailed explanations and code via "Learn More"
+- Session and question management with notes/pins
+- Image upload support for user profiles
+- Clean, modern responsive UI with Tailwind CSS
+- Deployed: Vercel (Frontend) + Render (Backend)
 
-http://localhost:7000/api/sessions/create
+---
 
-Body - raw - json
+## 🧠 Use Case
 
-{
-"role": "Frontend Developer",
-"experience": "2 years",
-"topicsToFocus": "React, JavaScript",
-"description": "Practice for frontend interview",
-"questions": [
-{ "question": "What is React?", "answer": "A JS library for building UIs" },
-{ "question": "Explain useState.", "answer": "A React hook for state." }
-]
-}
+> _"I want to prepare for frontend interviews, but I’m overwhelmed by scattered topics."_  
+> → **TyariBot** lets users define what they want to study, generates questions via Gemini AI, and guides them with clear answers — a personal AI mentor!
 
-6. Session - Get
-   Update key and value
+---
 
-http://localhost:7000/api/sessions/my-sessions
+## 🔧 Tech Stack
 
-7. Session - get
-   get by its id
+| Layer          | Tech Stack                     |
+| -------------- | ------------------------------ |
+| Frontend       | React, Vite, Tailwind CSS      |
+| Backend        | Node.js, Express.js            |
+| AI Integration | Google Gemini Generative AI    |
+| Authentication | JWT, bcryptjs                  |
+| Database       | MongoDB Atlas                  |
+| Deployment     | Vercel (FE), Render (BE)       |
+| Utilities      | Multer (images), dotenv, axios |
 
-http://localhost:7000/api/sessions/<sessionId>
+---
 
-headers
+## 📁 Folder Structure
 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+TyariBot/
+├── backend/ # Express server, routes, controllers
+│ ├── routes/
+│ ├── middleware/
+│ └── controllers/
+├── frontend/ # React + Vite application
+│ └── src/
+│ ├── components/
+│ ├── pages/
+│ └── utils/
 
-8. Session - get
+---
 
-get session by id
+## 🧭 Complete Workflow – From Landing Page to AI Output
 
-http://localhost:7000/api/sessions/686a1f566476040e772a74b5
+### 1️⃣ Landing Page – First Impression
 
-Session- id :686a1f566476040e772a74b5
-Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmExZjU2NjQ3NjA0MGU3NzJhNzRiNSIsImlhdCI6MTc1MTc4NTMxNywiZXhwIjoxNzUxODcxNzE3fQ.fEELBBSw290XY-8io8mFNmNksrKkX6JJdb_UCKqCXaQ
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-QUESTIONS
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
 
-9. post http://localhost:7000/api/questions/add
-   {
-   "sessionId": "686a55f8482629c20f80b2e0",
-   "question": [
-   {
-   "question": "What is Node.js?",
-   "answer": "Node.js is a JavaScript runtime built on Chrome's V8 engine."
-   },
-   {
-   "question": "What is Express.js?",
-   "answer": "Express.js is a web framework for Node.js."
-   }
-   ]
-   }
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
 
-setup header
-key Content-type
-value application/json
+---
 
-key Authorization
-value Bearer token
+### 2️⃣ User Authentication (JWT Secured)
 
-10. Pinning the question Post
-    http://localhost:7000/api/questions/686b3e822ad92e9c6732710e/pin
+📍 **Routes:** `/login`, `/register`  
+🛠️ **Tech Used:** React Forms + Express + MongoDB + JWT
 
-setup the header
-Content-Type
-application/json
+- 🔐 Register with name, email, password
+- Login generates a JWT token on success
+- Token stored in `localStorage`
+- All protected API routes validate the token via middleware
 
-Authorization
-Bearer Token
+````js
+// Express Middleware Example
+``` app.use("/api/ai/generate-questions", protect, generateInterviewQuestions);
 
-{
-"questionId": "686b3e822ad92e9c6732710e"
-}
+## 🧭 Workflow – From Dashboard to Completion
 
-11. Updating note to questions
+---
 
-Post http://localhost:7000/api/questions/686b3e822ad92e9c6732710e/note
-headers update same as previous
-{
-"questionId": "686b3e822ad92e9c6732710e",
-"note": "This is important for interviews."
-}
+### 3️⃣ Create Interview Session
 
-AI PART
+📍 **Page:** `/dashboard`
+🛠️ **Tech Used:** React Form → Express API
 
-12. genarate questions
-    POST
-    http://localhost:7000/api/ai/generate-questions
+Users define their session with:
 
-SET THE AUTHORIZATION ON HEADERS
-{
-"role": "Frontend Developer",
-"experience": 2,
-"topicsToFocus": "React, JavaScript, CSS",
-"numberOfQuestions": 3
-}
+- 👤 **Role** (e.g., Frontend Developer)
+- ⏳ **Years of Experience**
+- 📚 **Topics** (e.g., Java, OOP, React)
+- 🎯 **Reason for Preparation** (e.g., "Preparing for MAANG interview")
 
-13. POST http://localhost:7000/api/ai/generate-explanation
+✅ Session data is stored in **MongoDB** for later reference.
 
-Headers authorization tokens
-{
-"question": "What is the virtual DOM in React?"
-}
+🖼️ *Screenshot Placeholder:*
+`./screenshots/create-session.png`
+
+---
+
+### 4️⃣ Generate Interview Questions (AI - Gemini Integration)
+
+📍 **API:** `/api/ai/generate-questions`
+🛠️ **Tech Used:** Google Gemini API + Node + Express
+
+- Sends session input to Gemini API
+- AI generates a **custom set of interview questions**
+- Questions are rendered **point-wise** with collapsible views
+
+🖼️ *Screenshot Placeholder:*
+`./screenshots/generated-questions.png`
+
+---
+
+### 5️⃣ View Answers + “Learn More”
+
+📍 **API:** `/api/ai/generate-explanation`
+🛠️ **Tech Used:** Gemini API → Markdown Parsing + Syntax Highlighting
+
+- Each question has an option to view a **short answer**
+- If not satisfied, users click **“Learn More”**
+
+Gemini provides:
+
+- 📘 **Detailed explanation**
+- 💻 **Sample code** (rendered in dark mode using `<pre><code>` blocks)
+
+🖼️ *Screenshot Placeholder:*
+`./screenshots/detailed-answer.png`
+
+---
+
+### 6️⃣ Session Management Dashboard
+
+📍 **Page:** `/my-sessions`
+🛠️ **Tech Used:** React + REST API
+
+- 📁 View all saved sessions
+- 📌 Pin key questions for future review
+- 📝 Add personal notes for each question
+
+🖼️ *Screenshot Placeholder:*
+`./screenshots/session-dashboard.png`
+
+---
+
+## ⚙️ Local Setup Instructions
+
+---
+
+### 🛠 Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+
+````
