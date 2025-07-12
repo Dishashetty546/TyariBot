@@ -47,21 +47,6 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 ---
 
-## 📁 Folder Structure
-
-TyariBot/
-├── backend/ # Express server, routes, controllers
-│ ├── routes/
-│ ├── middleware/
-│ └── controllers/
-├── frontend/ # React + Vite application
-│ └── src/
-│ ├── components/
-│ ├── pages/
-│ └── utils/
-
----
-
 ## 🧭 Complete Workflow – From Landing Page to AI Output
 
 ### 1️⃣ Landing Page – First Impression
@@ -78,98 +63,86 @@ TyariBot/
 
 ---
 
-### 2️⃣ User Authentication (JWT Secured)
+### 1️⃣ Landing Page – First Impression
 
-📍 **Routes:** `/login`, `/register`  
-🛠️ **Tech Used:** React Forms + Express + MongoDB + JWT
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-- 🔐 Register with name, email, password
-- Login generates a JWT token on success
-- Token stored in `localStorage`
-- All protected API routes validate the token via middleware
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
 
-````js
-// Express Middleware Example
-``` app.use("/api/ai/generate-questions", protect, generateInterviewQuestions);
-
-## 🧭 Workflow – From Dashboard to Completion
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
 
 ---
 
-### 3️⃣ Create Interview Session
+### 1️⃣ Landing Page – First Impression
 
-📍 **Page:** `/dashboard`
-🛠️ **Tech Used:** React Form → Express API
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-Users define their session with:
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
 
-- 👤 **Role** (e.g., Frontend Developer)
-- ⏳ **Years of Experience**
-- 📚 **Topics** (e.g., Java, OOP, React)
-- 🎯 **Reason for Preparation** (e.g., "Preparing for MAANG interview")
-
-✅ Session data is stored in **MongoDB** for later reference.
-
-🖼️ *Screenshot Placeholder:*
-`./screenshots/create-session.png`
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
 
 ---
 
-### 4️⃣ Generate Interview Questions (AI - Gemini Integration)
+### 1️⃣ Landing Page – First Impression
 
-📍 **API:** `/api/ai/generate-questions`
-🛠️ **Tech Used:** Google Gemini API + Node + Express
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-- Sends session input to Gemini API
-- AI generates a **custom set of interview questions**
-- Questions are rendered **point-wise** with collapsible views
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
 
-🖼️ *Screenshot Placeholder:*
-`./screenshots/generated-questions.png`
-
----
-
-### 5️⃣ View Answers + “Learn More”
-
-📍 **API:** `/api/ai/generate-explanation`
-🛠️ **Tech Used:** Gemini API → Markdown Parsing + Syntax Highlighting
-
-- Each question has an option to view a **short answer**
-- If not satisfied, users click **“Learn More”**
-
-Gemini provides:
-
-- 📘 **Detailed explanation**
-- 💻 **Sample code** (rendered in dark mode using `<pre><code>` blocks)
-
-🖼️ *Screenshot Placeholder:*
-`./screenshots/detailed-answer.png`
+🖼️ _Screenshot Placeholder:_  
+`./Screenshots/lp.PNG`
 
 ---
 
-### 6️⃣ Session Management Dashboard
+### 1️⃣ Landing Page – First Impression
 
-📍 **Page:** `/my-sessions`
-🛠️ **Tech Used:** React + REST API
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-- 📁 View all saved sessions
-- 📌 Pin key questions for future review
-- 📝 Add personal notes for each question
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
 
-🖼️ *Screenshot Placeholder:*
-`./screenshots/session-dashboard.png`
-
----
-
-## ⚙️ Local Setup Instructions
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
 
 ---
 
-### 🛠 Backend Setup
+### 1️⃣ Landing Page – First Impression
 
-```bash
-cd backend
-npm install
-npm run dev
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
 
-````
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
+
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
+
+---
+
+### 1️⃣ Landing Page – First Impression
+
+📍 **Route:** `/`  
+🛠️ **Tech Used:** React + Tailwind CSS
+
+- Clean and engaging interface
+- Brief description of platform features
+- “Get Started” CTA → navigates to login or registration
+
+🖼️ _Screenshot Placeholder:_  
+`./screenshots/landing-page.png`
+
+---
