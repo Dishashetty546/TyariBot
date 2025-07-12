@@ -59,7 +59,7 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 - “Get Started” CTA → navigates to login or registration
 
 🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
+`./Screenshots/lp.PNG`
 
 ---
 
