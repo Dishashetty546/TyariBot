@@ -1,6 +1,6 @@
 # 🤖 TyariBot – AI-Powered Mock Interview Platform
 
-![TyariBot Logo](./screenshots/logo.png)
+![TyariBot Logo](./ScreenShots/l.png)
 
 A full-stack intelligent mock interview simulator that helps users prepare for real-world technical interviews. Built using the MERN stack, JWT auth, and Gemini AI integration, TyariBot generates personalized interview questions and detailed explanations with code — just like a real interviewer would.
 
