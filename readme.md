@@ -78,31 +78,30 @@ A full-stack intelligent mock interview simulator that helps users prepare for r
 
 ---
 
-### 1️⃣ Landing Page – First Impression
+### 3️⃣ Create Interview Session
 
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
+📍 **Page:** `/dashboard`  
+🛠️ **Tech Used:** React + Express + MongoDB
 
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
-
-🖼️ _Screenshot Placeholder:_  
-`./Screenshots/lp.PNG`
+- Fill in role, experience, topics, and goal
+- Submits session to backend and stores in database
+- Used later for generating personalized AI questions
+  \🖼️ _Screenshot Placeholder:_  
+  ![Secure Register Page](./ScreenShots/d.PNG)
 
 ---
 
-### 1️⃣ Landing Page – First Impression
+### 4️⃣ Generate Interview Questions (AI-Powered)
 
-📍 **Route:** `/`  
-🛠️ **Tech Used:** React + Tailwind CSS
+📍 **API:** `/api/ai/generate-questions`  
+🛠️ **Tech Used:** Node.js + Express + Gemini API
 
-- Clean and engaging interface
-- Brief description of platform features
-- “Get Started” CTA → navigates to login or registration
+- Sends session data to Gemini AI
+- AI returns a tailored list of interview questions
+- Questions are shown point-wise with clean UI
 
-🖼️ _Screenshot Placeholder:_  
-`./screenshots/landing-page.png`
+\🖼️ _Screenshot Placeholder:_  
+![Secure Register Page](./ScreenShots/g.PNG)
 
 ---
 
